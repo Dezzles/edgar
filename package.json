@@ -1,0 +1,27 @@
+{
+  "name": "edgar",
+  "version": "0.0.0",
+  "description": "Markov chains built around Edgar Allan Poe",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dezzles/edgar.git"
+  },
+  "private": true,
+  "author": "Dezzles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dezzles/edgar/issues"
+  },
+  "dependencies": {
+    "node-schedule": "~1.1.1",
+    "twitter": "~1.4.0",
+    "uuid": "~2.0.2",
+    "yargs": "~5.0.0",
+    "bunyan": "~1.8.1"
+  }
+}
