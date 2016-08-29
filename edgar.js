@@ -26,7 +26,7 @@ var edgar = {
       this.stories[v].set = Chains.createSet();
       this.stories[v].type = o.type;
       this.stories[v].maxLength = o.maxLength;
-      this.stories[v].minLenght = o.minLength;
+      this.stories[v].minLength = o.minLength;
       this.stories[v].set.endChar = o.endChar;
       this.stories[v].set.joinChar = o.joinChar;
       Chains.parse(this.stories[v].set, text, true);
