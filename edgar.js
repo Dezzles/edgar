@@ -19,7 +19,7 @@ var edgar = {
     var config = fs.readFileSync('config.js', 'utf8');
     this.config = JSON.parse(config);
     for (var v in this.config) {
-      log.info('Loading: ' + v);
+      log.info('Load', 'Loading: ' + v);
       var o = this.config[v];
       var text = fs.readFileSync(o.file, 'utf8');
       this.stories[v] = {};
@@ -35,16 +35,16 @@ var edgar = {
         this.currentMood = o.moods[i];
       }
     }
-    log.info(this.moods);
+    log.info('Load', this.moods);
   },
   updateMood : function(log) {
-    log.info("Updating Mood");
-    log.info("Current mood: " + this.currentMood);
+    log.info('MOOD', "Updating Mood");
+    log.info('MOOD', "Current mood: " + this.currentMood);
     var newMood = this.currentMood;
     while (newMood == this.currentMood) {
       newMood = this.moodList[Chains.rand(this.moodList.length)];
     }
-    log.info({ update: "MOOD", old: this.currentMood, new: newMood });
+    log.info('MOOD', { old: this.currentMood, new: newMood });
     this.currentMood = newMood;
   },
   getText : function( min, max, log ) {
@@ -58,9 +58,6 @@ var edgar = {
     };
   }
 }
-
-
-
 
 
 module.exports = edgar;

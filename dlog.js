@@ -19,8 +19,8 @@ var logger = {
   instance : function() {
     var res = { 
       log : log, uuid : uuid.v1(),
-      doLog : function(fn, msg) {
-        var obj = { uuid : this.uuid };
+      doLog : function(fn, type,  msg) {
+        var obj = { uuid : this.uuid, type: type.toUpperCase(), message: "" };
         if ( ( typeof msg == "object" ) && !(msg instanceof Array) )  {
           for (var v in msg) {
             if (msg.hasOwnProperty(v)) {
@@ -33,14 +33,14 @@ var logger = {
         }
         fn.apply(this.log, [ obj ]);
       }, 
-      info : function(msg) {
-        this.doLog(this.log.info, msg);
+      info : function(type, msg) {
+        this.doLog(this.log.info, type, msg);
       },
-      error : function(msg) {
-        this.doLog(this.log.error, msg);
+      error : function(type, msg) {
+        this.doLog(this.log.error, type, msg);
       },
-      debug : function(msg) {
-        this.doLog(this.log.debug, msg);
+      debug : function(type, msg) {
+        this.doLog(this.log.debug, type, msg);
       }
     };
     res.self = res;

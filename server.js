@@ -25,7 +25,7 @@ var rules = [];
 
 var postTweet = function() {
   var logobj = Logger.instance();
-  logobj.info('Starting update');
+  logobj.info('TWEET', 'Starting update');
   var tweet = Edgar.getText(50, 140, logobj);
   comms.post(tweet, logobj);
   if (Chains.rand(100) < 20) {
@@ -44,8 +44,8 @@ if (argv.f) {
   tweetTimer = argv.f;
   tweetsPerHour = 60 / tweetTimer;
 }
-log.info("Frequency set to " + tweetTimer);
-log.info("Tweets per hour: " + tweetsPerHour);
+log.info("INIT", "Frequency set to " + tweetTimer);
+log.info("INIT", "Tweets per hour: " + tweetsPerHour);
 for (var v = 0; v < tweetsPerHour; ++v ) { 
   var rule = new schedule.RecurrenceRule();
   rule.minute = v * tweetTimer;

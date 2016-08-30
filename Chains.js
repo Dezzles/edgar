@@ -127,9 +127,9 @@ var Chains = {
   },
   
   getText : function (set, minLength, maxLength, log) {
-    log.debug('getText start');
+    log.info('update', 'Generating text');
     if (maxLength < minLength) {
-      console.error("maxLength less than minLength");
+      log.error('update', "maxLength less than minLength");
       return;
     }
     var text = Chains.getSentence(set);
@@ -143,7 +143,7 @@ var Chains = {
       }
       text = text + set.joinChar + nextText;
     }
-    log.debug('getText stop');
+    log.debug('update', 'Text generation complete');
     return text;
   }
 };
