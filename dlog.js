@@ -6,7 +6,7 @@ var log = bunyan.createLogger({
   streams: [
     {
       level: 'info',
-      path: '/logs/dezzles/edgar/info.log'
+      path: '/log/dezzles/edgar/info.log'
     },
     {
       level: 'info',
