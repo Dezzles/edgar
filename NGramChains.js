@@ -98,17 +98,22 @@ var Chains = {
       log.error('update', "maxLength less than minLength");
       return;
     }
-    var text = Chains.getSentence(set);
-    while (text.length > maxLength) {
-      text = Chains.getSentence(set);
-    }
-    while (text.length < minLength) {
-      var nextText = Chains.getSentence(set);
-      while ( (text + set.joinChar + nextText).length > maxLength) {
-        nextText = Chains.getSentence(set);
-      }
-      text = text + set.joinChar + nextText;
-    }
+    var text = null;
+	var tries = 5;
+	while ((tries > 0) && (text == null)) {
+		var newText = set.markov.generateSentences(tries).join(set.joinChar);
+		if (newText <= maxLength) {
+			text = newText;
+		}
+		--tries;
+	}
+	while (text == null ) {
+		var newText = set.markov.generateSentences(1).join(set.joinChar);
+		if (newText <= maxLength) {
+			text = newText;
+		}
+	}
+	log.info('New Message', newText);
     return text;
   }
 };
