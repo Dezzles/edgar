@@ -18,11 +18,12 @@
     "url": "https://github.com/Dezzles/edgar/issues"
   },
   "dependencies": {
+    "bunyan": "~1.8.1",
     "node-schedule": "~1.1.1",
+    "process": "~0.11.8",
+    "rita": "^1.1.51",
     "twitter": "~1.4.0",
     "uuid": "~2.0.2",
-    "yargs": "~5.0.0",
-    "bunyan": "~1.8.1",
-    "process": "~0.11.8"
+    "yargs": "~5.0.0"
   }
 }

@@ -32,6 +32,7 @@ var postTweet = function() {
     Edgar.updateMood(logobj);
   }
 };
+log.debug("INIT", "args to run: " + argv.t);
 if (argv.t) {
   for (v = 0; v < 20; ++ v) {
     postTweet();

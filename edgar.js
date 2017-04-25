@@ -1,5 +1,5 @@
 var fs = require('fs');
-var Chains = require('./Chains');
+var Chains = require('./NGramChains');
 var edgar = {
   config : {},
   moods : {},
